@@ -1,25 +1,39 @@
-<?php
-/**ecrire un script qui genere deux points: un point A (xA,yA) et un point B (xB,yB)
-* le script affiche les deux point et affiche la distance qu separe ces deux point*/
-const min=1;
-const max=50;
-$xA=rand(max,min);
-$yA=rand(max,min);
-$xB=rand(max,min);
-$yB=rand(max,min);
-$D=sqrt(pow($xA-$xB,2)+pow($yA-$yB,2));
-echo("la distance est".$D."<br>");
-echo("le point A est($xA,$yA)"."<br>");
-echo("le point B est($xB,$yB)"."<br>");
+<?php /**
+ * ecrire un script qui génere un jour , un mois et une année
+ * puis vérifie si la date généreé est valide ou pas.
+ */
+define("maxa", 2030);
+define("mina", 2000);
+$annee = rand(maxa, mina);
 
+define("maxm", 12);
+define("minm", 1);
+$mois = rand(maxm, minm);
 
+define("maxj", 31);
+define("minj", 1);
+$jour = rand(maxj, minj);
 
+if ($mois=4) {
+    $jour==30;
+}
+elseif ($mois=6) {
+    $jour==30;
+}
+elseif ($mois=9) {
+    $jour==30;
+}
+elseif ($mois=11) {
+    $jour==30;
+}
+elseif (($mois=2) && ($annee%100==0) && ($annee%400==0)) {
+    $jour==29;
+}
+elseif (($annee%100==!0) && ($annee%4==0)) {
+    $jour==29;
+}
+else {
+    $jour==28;
+}
+echo("le jour est $jour/$mois/$annee");
 
-
-
-
-
-
-
-
-?>
